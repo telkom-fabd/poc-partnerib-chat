@@ -45,6 +45,8 @@ const LoginPage = () => {
         const result = await authService.login(body);
         if (result.isSuccess) {
             cookie.saveToken(result.token);
+            cookie.saveUser(result.user);
+
             setTimeout(() => {
                 navigate('/chat');
             }, 1200);

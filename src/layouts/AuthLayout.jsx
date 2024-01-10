@@ -15,11 +15,15 @@ const AuthLayout = ({children}) => {
         }
     }, [navigate]);
 
+    if (isGetToken) {
+        return <></>;
+    }
+
     return (
         <>
             <div className="auth-backdrop">
                 <div className="auth-container">
-                    {isGetToken ? <></> : children}
+                    {children}
                 </div>
             </div>
         </>

@@ -10,6 +10,7 @@ const login = async (body) => {
             return {
                 isSuccess: true,
                 token: response.data.data.access_token,
+                user: response.data.data.user,
             };
         } else {
             return {

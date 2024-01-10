@@ -3,6 +3,7 @@ import ChatListPage from "../pages/Chat/ChatListPage.jsx";
 import LoginPage from "../pages/Auth/LoginPage.jsx";
 import RegisterPage from "../pages/Auth/RegisterPage.jsx";
 import AuthLayout from "../layouts/AuthLayout.jsx";
+import PrivateLayout from "../layouts/PrivateLayout.jsx";
 
 const AppRouter = () => {
     return (
@@ -17,7 +18,11 @@ const AppRouter = () => {
                     <RegisterPage/>
                 </AuthLayout>
             }/>
-            <Route path="/chat" element={<ChatListPage/>}/>
+            <Route path="/chat" element={
+                <PrivateLayout>
+                    <ChatListPage/>
+                </PrivateLayout>
+            }/>
         </Routes>
     );
 };
