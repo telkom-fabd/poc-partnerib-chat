@@ -26,4 +26,31 @@ const login = async (body) => {
     }
 };
 
-export {login};
+const register = async (body) => {
+    try {
+        const url = `${API_URL}/api/v1/auth/register-merchant`;
+        const response = await axios.post(url, body);
+        if (response.data.data && response.data.data.access_token) {
+            return {
+                isSuccess: true,
+                token: response.data.data.access_token,
+                user: response.data.data.user,
+            };
+        } else {
+            return {
+                isSuccess: false,
+                message: 'Register failed',
+            };
+        }
+    } catch (err) {
+        return {
+            isSuccess: false,
+            message: err.response.data.message,
+        };
+    }
+};
+
+export {
+    login,
+    register,
+};

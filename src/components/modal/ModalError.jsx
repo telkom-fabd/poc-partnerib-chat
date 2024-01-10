@@ -39,11 +39,13 @@ const ModalError = ({isOpen, title, message, onClose}) => {
                         justifyContent='center'
                         alignItems='center'
                         minH={200}
+                        p={4}
                     >
                         <Text
                             color='red.500'
                             fontWeight='bold'
                             fontSize='lg'
+                            textAlign='center'
                         >
                             {message}
                         </Text>

@@ -101,8 +101,17 @@ const LoginPage = () => {
                             </FormControl>
 
                             <Button
+                                variant='link'
+                                size='sm'
+                                color='red.600'
+                                onClick={() => navigate('/register')}
+                            >
+                                {`Don't have an account?`}
+                            </Button>
+
+                            <Button
                                 variant='solid'
-                                size='lg'
+                                size='md'
                                 mt={8}
                                 isLoading={isLoading}
                                 onClick={handleLogin}
